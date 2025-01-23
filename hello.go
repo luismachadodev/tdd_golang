@@ -2,10 +2,20 @@ package main
 
 import "fmt"
 
-func Hello() string {
-	return "Hello, World"
+const englishHelloPrefix = "Hello, "
+
+func Hello(name, idiome string) string {
+	if name == "" {
+		name = "World"
+	}
+
+	if idiome == "espanhol" {
+		return "Hola, " + name
+	}
+
+	return englishHelloPrefix + name
 }
 
 func main() {
-	fmt.Println(Hello())
+	fmt.Println(Hello("world", ""))
 }
